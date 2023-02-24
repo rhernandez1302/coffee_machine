@@ -74,15 +74,20 @@ def enough_resources(total_water, total_milk, total_coffee):
     elif total_milk <= 0:
         print("Sorry not milk")
 
+
 total_water = resources['water']
 total_milk = resources['milk']
 total_coffee = resources['coffee']
 """Added this while loop to keep running program"""
-machine_works = True
-while machine_works:
+machine_on = True
+while machine_on:
     choice = input("What would you like to order(espresso/latte/cappuccino) ")
+
     if choice == 'report':
         report(total_water, total_milk, total_coffee)
+    elif choice == 'off':
+        print("Machine is turned off")
+        machine_on = False
     else:
         total_water = water(choice)
         total_milk = milk(choice)
